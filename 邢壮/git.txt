@@ -1,0 +1,58 @@
+在github里创建公共秘钥
+	初始化 git init
+	克隆项目代码  git clone https://github.com/zimogod/finReact-redux.git（网站）？
+	配置秘钥  ssh-keygen -t rsa -C “邮箱地址”（找到文件所在地，用文本打开，复制）
+	在github里的设置里，添加公共秘钥
+上传文件
+	git config --global user.name "github账户名"
+	git config --global user.email "邮箱地址"
+	git config --list 检查是否存在
+	git status 检查目前文件状态（当前文件为红色）
+	git add 提交文件   .为全部文件
+	git status 检查目前文件状态（当前文件为绿色）
+	第一次推送
+	git add 某个文件
+	git commit -m “提交信息”
+	git remote add origin 仓库地址  （只有第一次推送时需要）
+	git push -u origin master （第一推送到远程仓库）
+	后面推送
+	git add .
+	git commit -m “提交信息”
+	git push
+克隆代码：down
+	你电脑本地从来没有当前项目的代码，得需要克隆下来【clone】
+	一旦克隆下来之后，再也不用clone，提交代码，更新等
+	git pull：更新代码到本地
+防止提交错误失败的情况：
+	检查，提交代码先检查，是否其他人员已经提交过了代码，要保证仓库的代码和你本地的代码是一样的，才能提交成功
+	
+	无上法则：先pull再push
+
+代码储藏功能：
+	git stash：储存暂存区的代码
+	git stash save "fix 19876":
+更新代码：git pull
+解冻：
+	解除stash：git stash pop
+	
+	推送：git push
+git分支：
+	查看分支：git branch （前面有*就在那个分支上）	
+	创建一个分支：git branch 分支名
+	切换分支：git checkout 分支名
+	删除分支：git branch -d 分支名
+	合并分支：git merge 分支名
+	在新的分支里，要重新进行推送，git push -u origin 分支名
+
+要合并开发分支代码，必须先在开发分支把代码推送完成，合并代码的人必须要切换到主分支上，然后才能合并，合并完成后必须推送到仓库
+
+合并流程：
+	开发分支：操作完成【push完成】
+	切换到主分支 master
+	合并：git merge 分支名
+	推送：git push
+	
+	
+	
+		
+	
